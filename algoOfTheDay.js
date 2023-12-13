@@ -88,12 +88,10 @@ function poisonType(pokemon) {
  */
 function flyingSecondType(pokemon) {
     //your code here
-    for (let i = 0; i < pokemon.length; i++) {
-        let loop = pokemon[i];
-        // console.log(loop.id)
-        if (loop.types.length > 1) console.log(loop)
-    }
-}
+   for (let i = 0; i < pokemon.length; i++) {
+    if (pokemon[i].types[1] === 'flying') console.log(pokemon[i].types)
+   }
+};
 
 /**
  * console.log the reverse of the names of the pokemon whose only type is 'poison'
@@ -102,19 +100,23 @@ function flyingSecondType(pokemon) {
  */
 function reversedNamesOfPoisonPokemon(pokemon) {
     //your code here
-}
+    for (ele in pokemon) {
+        // console.log(pokemon[ele])
+        if (pokemon[ele].types[0] === 'poison' || pokemon[ele].types[1] === 'poison') console.log(pokemon[ele].name.split('').reverse().join(''))
+    }
+};
 
-// console.log(" Pokemon whose id is divisible by 3")
-// divisibleByThree(pokemon);
+console.log(" Pokemon whose id is divisible by 3")
+divisibleByThree(pokemon);
 
-// console.log("\n Pokemon with multiple types")
-// moreThanOneType(pokemon);
+console.log("\n Pokemon with multiple types")
+moreThanOneType(pokemon);
 
-// console.log("\n Pokemon names whose only type is poison")
-// poisonType(pokemon);
+console.log("\n Pokemon names whose only type is poison")
+poisonType(pokemon);
 
 console.log("\n First type of Pokemon whose second type is flying")
 flyingSecondType(pokemon);
 
-// console.log("\n The reversed names of poison Pokemon")
-// reversedNamesOfPoisonPokemon(pokemon);
+console.log("\n The reversed names of poison Pokemon")
+reversedNamesOfPoisonPokemon(pokemon);
